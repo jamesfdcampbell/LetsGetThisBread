@@ -3,9 +3,11 @@
 one:
   name: MyString
   description: MyString
+  category: MyString
   price: 9.99
 
 two:
   name: MyString
   description: MyString
+  category: MyString
   price: 9.99
