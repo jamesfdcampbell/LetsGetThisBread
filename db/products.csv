@@ -1,0 +1,100 @@
+﻿name,description,category,price
+Baguette,"A long, thin loaf of French bread with a crisp crust, typically made from basic lean dough",bread,3.75
+Ciabatta,"An Italian white bread made from wheat flour and yeast, with a crisp crust and porous texture",bread,4
+Rye Bread,"Bread made with rye flour, known for its slightly sour taste and firm texture",bread,3.95
+Sourdough,A bread made from naturally occurring yeast and lactobacilli with a slightly sour taste,bread,5
+Pumpernickel,"A dense, dark bread made from rye flour and rye berries with a deep flavour",bread,4.5
+Focaccia,An Italian flatbread that may be topped with herbs and other ingredients,bread,4.25
+Challah,"A Jewish braided bread that is soft, rich, and slightly sweet",bread,6
+Brioche,"A French bread made with a high egg and butter content, which gives it a rich and tender crumb",bread,5.5
+Irish Soda Bread,"A quick bread made with baking soda as a leavening agent, often with raisins",bread,4.75
+Naan,"An Indian flatbread, typically cooked in a tandoor, soft and pillowy in texture",bread,3.5
+Pita Bread,"A soft, slightly leavened flatbread baked from wheat flour, originating from the Near East",bread,3.5
+Multigrain Bread,"Bread made with more than one type of grain, often containing whole grains and seeds",bread,4
+Pretzel Bread,"A type of bread that has a dark, thick outer crust, similar to a traditional soft pretzel",bread,4.25
+Pane Toscano,"An unsalted Tuscan bread, traditionally made with a crunchy crust and a dense crumb",bread,5.25
+Stollen,"A German fruit bread of nuts, spices, and dried or candied fruit, coated with powdered sugar or icing sugar",bread,7
+Langos,"A Hungarian bread, deep-fried and usually served with garlic butter, cheese, or sour cream",bread,3.75
+Borodinsky Bread,"A dark sourdough rye bread, flavoured with molasses and coriander from Russia",bread,5
+Damper,"An Australian bread, traditionally baked in the coals of a campfire; it's a dense loaf made from wheat flour and water",bread,4
+Tiger Bread,"A Dutch loaf with a mottled crust resembling tiger skin, also known as Dutch crunch",bread,3.75
+Proja,"A Balkan cornbread made of corn flour, water, and salt, often enriched with cheese or spinach",bread,3.5
+Panettone,"A sweet Italian bread loaf from Milan, traditionally prepared and enjoyed for Christmas and New Year",bread,10
+Chapati,"An unleavened Indian flatbread, which is soft, chewy, and flaky",bread,3.5
+Anadama Bread,A traditional yeast bread of New England with a sweet flavour from molasses and texture from cornmeal,bread,5.5
+Bagel,"A dense bread roll in the shape of a ring, made by boiling dough and then baking it.",bread,3.5
+Apple Pie,Classic American pie filled with sweetened apples and spices,pie,15
+Pumpkin Pie,"A smooth custard pie with a signature pumpkin flavour, spiced with cinnamon, ginger, and cloves",pie,12
+Pecan Pie,"Sweet pie consisting of a syrupy filling mixed with pecans, on a pie crust",pie,18
+Key Lime Pie,"American pie made from Key lime juice, egg yolks, and sweetened condensed milk in a pie crust",pie,14
+Cherry Pie,"Pie filled with tart cherry filling, often topped with a lattice crust",pie,15
+Lemon Meringue Pie,A dessert pie with a tart lemon custard filling and a fluffy meringue topping,pie,13
+Banoffee Pie,"An English pie made from bananas, cream, and toffee on a buttery biscuit base",pie,16
+Blueberry Pie,"Pie filled with blueberries, sugar, and a touch of lemon",pie,17
+Meat Pie,"A savoury pie filled with cooked meat and gravy, a staple in British and Australian cuisine",pie,20
+Shepherd's Pie,"A British pie with a filling of ground meat and vegetables, topped with mashed potato",pie,18
+Chicken Pot Pie,"A savoury pie filled with a mixture of chicken, vegetables, and sauce",pie,19
+Mississippi Mud Pie,A chocolate-flavoured pie with a gooey chocolate sauce on a crumbly chocolate crust,pie,20
+Sweet Potato Pie,A traditional Southern pie with a smooth filling made from sweet potatoes,pie,12
+Coconut Cream Pie,A sweet pie filled with coconut custard and topped with whipped cream and toasted coconut,pie,15
+Rhubarb Pie,Tart pie made with rhubarb and often strawberries for added sweetness,pie,16
+Peach Pie,"A pie filled with juicy peaches and spices, often with a lattice crust",pie,15
+Steak and Ale Pie,A hearty British pie made with beef steak and ale gravy,pie,22
+Tourtiere,"A traditional French-Canadian pie filled with minced pork, beef, veal and spices",pie,18
+Pear and Almond Tart,A sweet pie made with poached pears and an almond frangipane,pie,16
+Bakewell Tart,"An English pie with a short crust pastry base, layered with jam and a frangipane filling",pie,14
+Cornish Pastry,"A British pie with a distinctive D-shape, stuffed with beef, potatoes, swede, and onion",pie,10
+Fish Pie,"A creamy British pie with a mixture of different fish and cheese, often topped with mashed potatoes",pie,20
+Quiche Lorraine,"A French tart with a pastry crust filled with custard, bacon, and cheese",pie,18
+Mince Pie,A small British sweet pie filled with a mixture of dried fruits and spices called mincemeat,pie,14
+Tarte Tatin,A French upside-down tart with caramelized fruit (usually apples) on top,pie,16
+New York Cheesecake,Rich and creamy cheesecake with a graham cracker curst,cake,25
+Black Forest Cake,"German cake with layers of chocolate sponge cake, cherries, and whipped cream",cake,30
+Tiramisu,"An Italian coffee-flavoured dessert with layers of ladyfingers dipped in coffee, and a whipped mixture of eggs, sugar, and mascarpone cheese, flavoured with cocoa",cake,28
+Victoria Sponge Cake,"A British cake made with eggs, flour, sugar, and butter, filled with jam and whipped cream",cake,20
+Red Velvet Cake,"An American cake with a distinctive red colour, cocoa flavour, and cream cheese frosting",cake,25
+Carrot Cake,A moist cake containing grated carrot and typically topped with cream cheese icing,cake,22
+Pavlova,"A meringue-based cake with a crust crust and soft, light inside, usually topped with fruit and whipped cream",cake,24
+Sacher Torte,"An Austrian chocolate cake, dense and rich, with apricot jam and dark chocolate icing",cake,30
+Opera Cake,"A French cake made with layers of almond sponge cake soaked in coffee syrup, layered with ganache and coffee buttercream, covered in a chocolate glaze",cake,32
+Battenberg Cake,"A light sponge cake with the pieces covered in jam and wrapped in marzipan, usually in a distinctive two-colour check pattern",cake,20
+Lemon Drizzle Cake,"A UK favourite, this is a moist lemon-flavoured cake with a simple lemon juice and sugar glaze",cake,18
+Gateau St. Honore,"A classic French cake combining puff pastry and a ring of choux pastry, filled with cream and sometimes topped with whipped cream",cake,35
+Angel Food Cake,"An American sponge cake made with egg whites, flour, and sugar, with no butter, which makes it very light and fluffy",cake,18
+Pound Cake,"A traditional American cake with a dense, buttery texture, made with a pound of each butter, sugar, eggs, and flour",cake,20
+Chiffon Cake,"A very light cake made with vegetable oil, eggs, sugar, flour, baking powder, and flavourings",cake,22
+Banana Bread,"More of a bread-cake hybrid, this sweet loaf is made with mashed bananas and often nuts or chocolate chips",cake,15
+Swiss Roll,"A type of roll cake made by rolling a thin sheet cake spread with jam, cream, or icing",cake,18
+Flourless Chocolate Cake,"A dense, fudgy cake made without flour, often described as a cross between a cake and a truffle",cake,25
+Lamingtons,Australian small squares of a sponge cake coated in a layer of chocolate icing and desiccated coconut. Price for a box of 12,cake,20
+Mooncake,"A traditional Chinese cake typically eaten during the Mid-Autumn Festival, usually filled with red bean or lotus seed paste. Price for a box of 4",cake,45
+Molten Chocolate Cake,"A popular dessert that combines the elements of a chocolate cake and a souffle, with a gooey chocolate centre",cake,26
+Spice Cake,"A cake flavoured with a mixture of spices, often topped with cream cheese frosting",cake,22
+Matcha Cake,"A light and fluffy cake flavoured with matcha (green tea powder), often layered or topped with a light frosting",cake,24
+King Cake,"Associated with Mardi Gras traditions, this cake is a ring of twisted cinnamon roll-style dough, topped with icing or sugar, usually coloured purple, green, and gold",cake,20
+Cassata,A traditional Sicilian cake made with layers of sponge cake moistened with fruit juices or liqueur and layered with ricotta cheese and candied fruit,cake,30
+Chocolate Chip Cookies,Classic American cookies with semi-sweet chocolate chips,cookie,3.5
+Macarons,"French meringue-based confections made with almond flour, sugar, and egg whites, often filled with ganache, buttercream, or jam",cookie,5
+Shortbread,"A traditional Scottish biscuit made from one part white sugar, two parts butter, and three parts flour",cookie,3.25
+Oatmeal Raisin Cookies,"Hearty cookies made with oats and raisins, a chewy favourite",cookie,3
+Sugar Cookies,Sweet and simple cookies often frosted or decorated with icing,cookie,3
+Snickerdoodle,"Soft cookies coated in cinnamon sugar, known for their crinkled surface",cookie,3.5
+Gingerbread Cookies,"Spiced cookies made with ginger, cinnamon, nutmeg, and molasses, often cut into shapes",cookie,4
+Biscotti,"Italian almond biscuits that are oblong-shaped, dry, and crunchy, typically dipped in a drink",cookie,4.5
+Anzac Biscuits,"Australian oat cookies, made with coconut and golden syrup, known for their hard texture",cookie,3.5
+Peanut Butter Cookies,"Dense, chewy cookies made with peanut butter as a primary ingredient",cookie,3.5
+Fortune Cookies,Crisp and sugary cookies usually served in Chinese restaurants with a fortune paper inside,cookie,3
+Russian Tea Cakes,"Small, powdery balls made with nuts, flour, butter, and powdered sugar",cookie,4.25
+Madeleines,"Small sponge cakes with a distinctive shell-like shape, flavoured with lemon zest",cookie,5
+Pfeffernusse,German spice cookies that are particularly popular during the Christmas season,cookie,3.75
+Linzer Cookies,"Austrian cookies with a sandwich structure, a cut-out on top, and a jam filling",cookie,4.5
+Speculaas,"Dutch spiced cookies with a characteristic design, often baked for St. Nicholas Day",cookie,3.25
+Amaretti,"Italian almond-flavoured cookies, crunch on the outside and chewy inside",cookie,4
+Alfajores,South American sandwich cookies filled with dulce de leche or jam,cookie,5
+Gingersnaps,"Brittle cookies flavoured with ginger, cloves, cinnamon, and molasses",cookie,3.5
+Polvorones,"Spanish crumbly cookies made with flour, sugar, milk, and nuts",cookie,4
+Molasses Cookies,"Chewy cookies with a rich molasses flavour, soft in the middle with a crackly surface",cookie,3.5
+Butter Cookies,"Simple, crisp cookies made predominantly with butter",cookie,3.25
+Jam Thumbprints,Buttery cookies with a dollop of jam in the centre of each,cookie,3.75
+Lebkuchen,Traditional German Christmas cookies resembling gingerbread,cookie,4.5
+Sables,"French round shortbread cookies known for their delicate, sandy texture",cookie,4
