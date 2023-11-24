@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'sassc-rails'
+
 gem 'smarter_csv'
 
+# ActiveAdmin
 gem 'activeadmin'
-
 gem 'devise'
 
 ruby '3.2.2'
