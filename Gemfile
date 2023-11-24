@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 gem 'smarter_csv'
 
+gem 'activeadmin'
+
+gem 'devise'
+
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

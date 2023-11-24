@@ -14,3 +14,4 @@ options = {
 SmarterCSV.process(products_csv_path, options).each do |product_hash|
   Product.create!(product_hash)
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
