@@ -2,12 +2,8 @@
 
 one:
   name: MyString
-  email: MyString
-  address: MyString
-  province: one
+  tax_rate: 9.99
 
 two:
   name: MyString
-  email: MyString
-  address: MyString
-  province: two
+  tax_rate: 9.99
