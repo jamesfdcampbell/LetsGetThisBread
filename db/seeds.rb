@@ -1,7 +1,8 @@
 require 'smarter_csv'
 
 Product.destroy_all
-Province.delete_all
+Province.destroy_all
+About.destroy_all
 
 products_csv_path = Rails.root.join('db', 'products.csv')
 
