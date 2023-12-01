@@ -1,7 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container mt-3 ms-5">
-  <h1 class="fs-1">Products</h1>
+<div class="container mt-5 ms-5 mb-5">
+  <div class="content shadow p-4 rounded">
+  <h1 class="fs-1 mb-3">Products</h1>
     <div id="products">
       <% @products.each do |product| %>
         <%= render product %>
@@ -12,6 +13,5 @@
       <% end %>
     </div>
   </div>
-<%= link_to "New product", new_product_path, class: "mb-5" %>
-<br><br>
+</div>
 
