@@ -1,25 +1,31 @@
 Rails.application.routes.draw do
-  get 'pages/about'
-  resources :products do
-    collection do
-      get "search"
-    end
-  end
+  # Devise routes for Customers
+  devise_for :customers
+
+  # Devise routes for Admin Users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :products
+
+  # Products routes
+  resources :products do
+    collection do
+      get 'search' # adds a search action to the products resource
+    end
+  end
+
+  # Other resources
   resources :order_products
   resources :orders
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  get '/admin', to: 'admin#dashboard'
-
+  # Static pages
   get '/about', to: 'pages#about'
 
-  # Defines the root path route ("/")
-  root to: "products#index"
+  # Health check route
+  get 'up', to: 'rails/health#show', as: :rails_health_check
+
+  # Admin dashboard route
+  get '/admin', to: 'admin#dashboard'
+
+  # Root path of the application
+  root to: 'products#index'
 end
