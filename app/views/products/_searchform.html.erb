@@ -1,0 +1,7 @@
+<%= form_with(url: search_products_path, method: :get, local: true, class: "form-inline") do %>
+  <div class="input-group mb-3">
+    <%= text_field_tag :keywords, params[:keywords], placeholder: 'Enter keywords', class: 'form-control' %>
+    <%= select_tag :category, options_for_select(Product.distinct.pluck(:category).insert(0, 'All Categories'), params[:category]), class: 'form-select' %>
+    <%= submit_tag 'Search', class: 'btn btn-primary' %>
+  </div>
+<% end %>

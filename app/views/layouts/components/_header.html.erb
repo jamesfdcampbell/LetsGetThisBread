@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!-- Example for additional navigation items -->
+        <!-- Existing navigation items -->
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
@@ -15,6 +15,10 @@
           <a class="nav-link" href="#">Link 2</a>
         </li>
       </ul>
+      <!-- Inline search form -->
+      <div class="d-flex align-items-center">
+        <%= render 'products/searchform' %>
+      </div>
     </div>
   </div>
 </nav>

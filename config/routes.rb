@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   get 'pages/about'
+  resources :products do
+    collection do
+      get "search"
+    end
+  end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :products

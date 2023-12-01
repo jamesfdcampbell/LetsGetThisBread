@@ -15,6 +15,23 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def search
+    # Begin with a scope that includes all products
+    scope = Product.all
+  
+    # Filter by category if provided
+    scope = scope.where(category: params[:category]) if params[:category].present? && params[:category] != 'All Categories'
+  
+    # Filter by keywords if provided
+    if params[:keywords].present?
+      keyword_search = "%#{params[:keywords]}%"
+      scope = scope.where('name LIKE :search OR description LIKE :search', search: keyword_search)
+    end
+  
+    # Assign the search results to @products instance variable
+    @products = scope
+  end  
+
   # GET /products/1/edit
   def edit
   end
