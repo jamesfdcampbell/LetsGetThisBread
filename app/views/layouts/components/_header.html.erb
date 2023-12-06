@@ -7,7 +7,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!-- Existing navigation items -->
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
@@ -15,10 +14,20 @@
           <%= link_to "Admin", admin_path, class: "nav-link" %>
         </li>
       </ul>
-      <!-- Inline search form -->
       <div class="d-flex align-items-center">
         <%= render 'products/searchform' %>
       </div>
+      <ul class="navbar-nav">
+        <% if customer_signed_in? %>
+          <li class="nav-item">
+            <%= button_to "Logout", destroy_customer_session_path, method: :delete, class: "btn ms-3 btn-outline-primary", form: { class: "d-inline" } %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= button_to "Login", new_customer_session_path, class: "btn ms-3 btn-outline-primary", form: { class: "d-inline" } %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>
