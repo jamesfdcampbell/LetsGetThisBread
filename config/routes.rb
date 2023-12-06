@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Devise routes for Customers
-  devise_for :customers
+  devise_for :customers, controllers: { registrations: 'customers/registrations' }
 
   # Devise routes for Admin Users
   devise_for :admin_users, ActiveAdmin::Devise.config
