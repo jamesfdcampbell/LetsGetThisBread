@@ -1,15 +1,27 @@
 <div class="container mt-5 mb-5">
   <div class="content shadow p-4 rounded">
-    <% if notice %>
-      <div class="alert alert-success" role="alert">
+  
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
         <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <!-- New Column for Unsplash Image -->
+    <div class="col-md-3">
+      <% if @product.name %>
+        <%= image_tag "https://source.unsplash.com/featured/350x350/?#{@product.name}", class: "img-fluid rounded" %>
+      <% end %>
+    </div>
+
+    <!-- Existing Product Details Column -->
+    <div class="col-md-9">
+        <%= render @product %>
+        <div class="mt-3">
+          <%= link_to "Back to products", products_path, class: "btn btn-secondary me-2" %>
+        </div>
       </div>
-    <% end %>
-
-    <%= render @product %>
-
-    <div class="mt-3">
-      <%= link_to "Back to products", products_path, class: "btn btn-secondary me-2" %>
     </div>
   </div>
 </div>
