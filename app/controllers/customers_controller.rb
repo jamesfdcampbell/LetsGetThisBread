@@ -14,11 +14,6 @@ class CustomersController < ApplicationController
   
     def create
       @customer = Customer.new(customer_params)
-      if @customer.save
-        # Handle a successful save.
-      else
-        render :new
-      end
     end
   
     def edit
