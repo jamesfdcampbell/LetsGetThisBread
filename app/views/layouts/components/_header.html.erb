@@ -22,6 +22,7 @@
           <li class="nav-item">
             <%= button_to "Logout", destroy_customer_session_path, method: :delete, class: "btn ms-3 btn-outline-primary", form: { class: "d-inline" } %>
           </li>
+          <i class="bi bi-cart3 ms-3 mt-1 h4"></i>
         <% else %>
           <li class="nav-item">
             <%= button_to "Login", new_customer_session_path, class: "btn ms-3 btn-outline-primary", form: { class: "d-inline" } %>
