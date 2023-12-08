@@ -13,9 +13,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :orders do
+    resources :order_products, only: [:create, :update, :destroy]
+  end
+
   # Other resources
   resources :order_products
-  resources :orders
 
   # Static pages
   get '/about', to: 'pages#about'

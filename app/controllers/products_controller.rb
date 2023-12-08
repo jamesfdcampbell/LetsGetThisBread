@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+    @product = Product.find(params[:id])
+    # @current_order = current_customer.orders.find_or_create_by(state: 'in_cart')
   end
 
   # GET /products/new

@@ -1,44 +1,30 @@
 class OrderProductsController < ApplicationController
   before_action :set_order_product, only: %i[ show edit update destroy ]
+  before_action :set_order
 
-  # GET /order_products or /order_products.json
-  def index
-    @order_products = OrderProduct.all
+def create
+  product = Product.find(order_product_params[:product_id])
+  quantity = order_product_params[:quantity].to_i
+
+  # Check if the product is already in the order
+  order_product = @order.order_products.find_by(product_id: product.id)
+
+  if order_product
+    # If present, update the quantity
+    order_product.update(quantity: order_product.quantity + quantity)
+  else
+    # If not present, create a new order_product
+    @order.order_products.create(product: product, quantity: quantity)
   end
 
-  # GET /order_products/1 or /order_products/1.json
-  def show
-  end
-
-  # GET /order_products/new
-  def new
-    @order_product = OrderProduct.new
-  end
-
-  # GET /order_products/1/edit
-  def edit
-  end
-
-  # POST /order_products or /order_products.json
-  def create
-    @order_product = OrderProduct.new(order_product_params)
-
-    respond_to do |format|
-      if @order_product.save
-        format.html { redirect_to order_product_url(@order_product), notice: "Order product was successfully created." }
-        format.json { render :show, status: :created, location: @order_product }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order_product.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  redirect_to order_path(@order), notice: 'Product added to order successfully.'
+end
 
   # PATCH/PUT /order_products/1 or /order_products/1.json
   def update
     respond_to do |format|
       if @order_product.update(order_product_params)
-        format.html { redirect_to order_product_url(@order_product), notice: "Order product was successfully updated." }
+        format.html { redirect_to order_product_url(@order_product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @order_product }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +38,7 @@ class OrderProductsController < ApplicationController
     @order_product.destroy!
 
     respond_to do |format|
-      format.html { redirect_to order_products_url, notice: "Order product was successfully destroyed." }
+      format.html { redirect_to order_products_url, notice: "Product was successfully removed." }
       format.json { head :no_content }
     end
   end
