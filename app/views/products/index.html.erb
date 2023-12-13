@@ -17,7 +17,7 @@
               <div class="col-2"><strong>Qty</strong></div>
               <div class="col-3"><strong>Unit Price</strong></div>
               <div class="col-2"><strong>Total</strong></div>
-              <div class="col-2"><strong>Remove</strong></div>
+              <div class="col-2"></div>
             </div>
             <% total_cart_price = 0 %>
             <% @cart.each do |item| %>
@@ -47,8 +47,12 @@
             <% end %>
             <!-- Total Row -->
             <div class="row mt-3">
-              <div class="col-12 text-start">
-                <strong>Cart Subtotal: $<%= '%.2f' % total_cart_price %></strong>
+              <div class="col-8">
+                <strong>Cart Subtotal:</strong>
+                <strong>$<%= '%.2f' % total_cart_price %></strong>
+              </div>
+              <div class="col-4 text-end">
+                <%= link_to "Check Out", orderconfirmation_path, method: :post, class: "btn btn-primary btn-sm ms-2" %>
               </div>
             </div>
           </div>
@@ -62,7 +66,7 @@
 
 <div class="container mt-5 mb-5">
   <div class="content shadow p-4 rounded">
-  <h1 class="display-4 mb-3"><strong>Products</strong></h1>
+    <h1 class="display-4 mb-3"><strong>Products</strong></h1>
     <div id="products">
       <% @products.each do |product| %>
         <%= render product %>

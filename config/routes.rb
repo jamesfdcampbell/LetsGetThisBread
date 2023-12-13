@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   
   # Static pages
   get '/about', to: 'pages#about'
+  get '/orderconfirmation', to: 'pages#orderconfirmation'
 
   # Health check route
   get 'up', to: 'rails/health#show', as: :rails_health_check

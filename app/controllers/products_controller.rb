@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
   
   def initialize_session
     session[:cart] ||= []
-end
+  end
 
   # Cart functionality
   def add_to_cart
