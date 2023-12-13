@@ -43,12 +43,16 @@ end
     price = params[:price].to_f
     quantity = params[:quantity].to_i
 
+    product = Product.find(id)
+
     existing_item = session[:cart].find { |item| item[0] == id }
 
     if existing_item
       existing_item[2] += quantity
+      flash[:notice] = "#{product.name} quantity updated."
     else
       session[:cart] << [id, price, quantity]
+      flash[:notice] = "#{product.name} added to cart."
     end
 
     redirect_to root_path
