@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :initialize_session
+  before_action :load_cart
 
   # GET /products or /products.json
   def index
@@ -32,6 +34,87 @@ class ProductsController < ApplicationController
   
     # Assign the search results to @products instance variable
     @products = scope
+  end 
+  
+  def initialize_session
+    session[:cart] ||= []
+end
+
+  # Cart functionality
+  def add_to_cart
+    id = params[:id].to_i
+    price = params[:price].to_f
+    quantity = params[:quantity].to_i
+
+    product = Product.find(id)
+
+    existing_item = session[:cart].find { |item| item[0] == id }
+
+    if existing_item
+      existing_item[2] += quantity
+      flash[:notice] = "#{product.name} quantity updated."
+    else
+      session[:cart] << [id, price, quantity]
+      flash[:notice] = "#{product.name} added to cart."
+    end
+
+    redirect_to root_path
+  end
+
+  def increase_quantity
+    id = params[:id].to_i
+
+    product = Product.find(id)
+
+    session[:cart].each do |item|
+      if item[0] == id
+        item[2] += 1 # Assuming the structure is [id, price, quantity]
+        break
+      end
+    end
+    flash[:notice] = "#{product.name} quantity increased by 1."
+    redirect_to root_path
+  end
+  
+  def decrease_quantity
+    id = params[:id].to_i
+
+    product = Product.find(id)
+
+    session[:cart].each do |item|
+      if item[0] == id && item[2] > 1
+        item[2] -= 1
+        break
+      end
+    end
+    flash[:notice] = "#{product.name} quantity decreased by 1."
+    redirect_to root_path
+  end
+
+  def remove_from_cart
+    id = params[:id].to_i
+
+    product = Product.find(id)
+
+    session[:cart].each_with_index do |item, index|
+      if item[0] == id
+        session[:cart].delete_at(index)
+        flash[:notice] = "#{product.name} removed from cart."
+        break
+      end
+    end
+    redirect_to root_path
+  end
+
+  def load_cart
+    @cart = session[:cart].map do |item|
+      product = Product.find(item[0])
+      {
+        name: product.name,
+        price: product.price,
+        quantity: item[2]
+      }
+    end
   end  
 
   # GET /products/1/edit
@@ -77,13 +160,14 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:name, :description, :category, :price)
-    end
-end
+  end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:name, :description, :category, :price)
+  end

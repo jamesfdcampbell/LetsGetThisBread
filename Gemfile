@@ -8,6 +8,8 @@ gem 'smarter_csv'
 gem 'activeadmin'
 gem 'devise'
 
+gem 'stripe'
+
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
