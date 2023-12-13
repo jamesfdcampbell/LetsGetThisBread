@@ -59,6 +59,36 @@ end
     redirect_to root_path
   end
 
+  def increase_quantity
+    id = params[:id].to_i
+
+    product = Product.find(id)
+
+    session[:cart].each do |item|
+      if item[0] == id
+        item[2] += 1 # Assuming the structure is [id, price, quantity]
+        break
+      end
+    end
+    flash[:notice] = "#{product.name} quantity increased by 1."
+    redirect_to root_path
+  end
+  
+  def decrease_quantity
+    id = params[:id].to_i
+
+    product = Product.find(id)
+
+    session[:cart].each do |item|
+      if item[0] == id && item[2] > 1
+        item[2] -= 1
+        break
+      end
+    end
+    flash[:notice] = "#{product.name} quantity decreased by 1."
+    redirect_to root_path
+  end
+
   def remove_from_cart
     id = params[:id].to_i
 

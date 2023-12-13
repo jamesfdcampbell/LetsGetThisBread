@@ -27,7 +27,15 @@
               <!-- Item Row -->
               <div class="row border-bottom mb-2 align-items-center">
                 <div class="col-3"><%= item[:name] %></div>
-                <div class="col-2"><%= item[:quantity] %></div>
+                <div class="col-2 d-flex align-items-center">
+                  <%= button_to decrease_quantity_path(product), method: :post, class: "btn btn-outline-primary btn-sm me-2" do %>
+                    <i class="bi bi-dash"></i>
+                  <% end %>
+                  <span><%= item[:quantity] %></span>
+                  <%= button_to increase_quantity_path(product), method: :post, class: "btn btn-outline-primary btn-sm ms-2" do %>
+                    <i class="bi bi-plus"></i>
+                  <% end %>
+                </div>
                 <div class="col-3">$<%= '%.2f' % item[:price] %></div>
                 <div class="col-2">$<%= '%.2f' % total_price_for_item %></div>
                 <div class="col-2">

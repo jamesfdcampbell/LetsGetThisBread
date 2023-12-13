@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   # Cart functionality
   post 'products/add_to_cart/:id', to: 'products#add_to_cart', as: 'add_to_cart'
   delete 'products/remove_from_cart/:id', to: 'products#remove_from_cart', as: 'remove_from_cart'
+  post 'add_quantity/:id', to: 'products#increase_quantity', as: 'increase_quantity'
+    post 'remove_quantity/:id', to: 'products#decrease_quantity', as: 'decrease_quantity'
   
   # Static pages
   get '/about', to: 'pages#about'
