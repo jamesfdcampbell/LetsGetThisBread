@@ -1,6 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<%= debug session[:cart] %>
+<% if !customer_signed_in? %>
+  <p>
+    Please sign in to add items to your cart.
+  </p>
+<% end %>
 
 <div class="container mt-5 mb-5">
   <div class="content shadow p-4 rounded">
