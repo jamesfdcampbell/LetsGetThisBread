@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
   before_action :initialize_session
+  before_action :load_cart
 
   # GET /products or /products.json
   def index
@@ -58,6 +59,16 @@ end
     redirect_to root_path
   end
 
+  def load_cart
+    @cart = session[:cart].map do |item|
+      product = Product.find(item[0])
+      {
+        name: product.name,
+        price: product.price,
+        quantity: item[2]
+      }
+    end
+  end  
 
   # GET /products/1/edit
   def edit
