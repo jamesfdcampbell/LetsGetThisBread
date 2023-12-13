@@ -59,6 +59,21 @@ end
     redirect_to root_path
   end
 
+  def remove_from_cart
+    id = params[:id].to_i
+
+    product = Product.find(id)
+
+    session[:cart].each_with_index do |item, index|
+      if item[0] == id
+        session[:cart].delete_at(index)
+        flash[:notice] = "#{product.name} removed from cart."
+        break
+      end
+    end
+    redirect_to root_path
+  end
+
   def load_cart
     @cart = session[:cart].map do |item|
       product = Product.find(item[0])

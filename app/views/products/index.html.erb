@@ -13,36 +13,27 @@
           <div class="container">
             <!-- Header Row -->
             <div class="row border-bottom mb-2">
-              <div class="col-4">
-                <strong>Product Name</strong>
-              </div>
-              <div class="col-2">
-                <strong>Qty</strong>
-              </div>
-              <div class="col-3">
-                <strong>Unit Price</strong>
-              </div>
-              <div class="col-3">
-                <strong>Total</strong>
-              </div>
+              <div class="col-3"><strong>Product Name</strong></div>
+              <div class="col-2"><strong>Qty</strong></div>
+              <div class="col-3"><strong>Unit Price</strong></div>
+              <div class="col-2"><strong>Total</strong></div>
+              <div class="col-2"><strong>Remove</strong></div>
             </div>
             <% total_cart_price = 0 %>
             <% @cart.each do |item| %>
+              <% product = Product.find_by(name: item[:name]) %>
               <% total_price_for_item = item[:price] * item[:quantity] %>
               <% total_cart_price += total_price_for_item %>
               <!-- Item Row -->
-              <div class="row border-bottom mb-2">
-                <div class="col-4">
-                  <%= item[:name] %>
-                </div>
+              <div class="row border-bottom mb-2 align-items-center">
+                <div class="col-3"><%= item[:name] %></div>
+                <div class="col-2"><%= item[:quantity] %></div>
+                <div class="col-3">$<%= '%.2f' % item[:price] %></div>
+                <div class="col-2">$<%= '%.2f' % total_price_for_item %></div>
                 <div class="col-2">
-                  <%= item[:quantity] %>
-                </div>
-                <div class="col-3">
-                  $<%= '%.2f' % item[:price] %>
-                </div>
-                <div class="col-3">
-                  $<%= '%.2f' % total_price_for_item %>
+                  <%= button_to remove_from_cart_path(product), method: :delete, class: "btn btn-danger btn-sm mb-2" do %>
+                    <i class="bi bi-x-lg"></i>
+                  <% end %>
                 </div>
               </div>
             <% end %>
