@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :initialize_session
 
   # GET /products or /products.json
   def index
@@ -30,7 +31,29 @@ class ProductsController < ApplicationController
   
     # Assign the search results to @products instance variable
     @products = scope
-  end  
+  end 
+  
+  def initialize_session
+    session[:cart] ||= []
+end
+
+  # Cart functionality
+  def add_to_cart
+    id = params[:id].to_i
+    price = params[:price].to_f
+    quantity = params[:quantity].to_i
+
+    existing_item = session[:cart].find { |item| item[0] == id }
+
+    if existing_item
+      existing_item[2] += quantity
+    else
+      session[:cart] << [id, price, quantity]
+    end
+
+    redirect_to root_path
+  end
+
 
   # GET /products/1/edit
   def edit
@@ -75,13 +98,14 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:name, :description, :category, :price)
-    end
-end
+  end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:name, :description, :category, :price)
+  end

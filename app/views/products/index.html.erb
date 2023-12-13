@@ -1,12 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
+<%= debug session[:cart] %>
+
 <div class="container mt-5 mb-5">
   <div class="content shadow p-4 rounded">
   <h1 class="fs-1 mb-3">Products</h1>
     <div id="products">
       <% @products.each do |product| %>
         <%= render product %>
-        <p>
+        <p class: "mt-2">
           <%= link_to "Show this product", product %>
         </p>
         <hr>

@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   # Other resources
   resources :order_products
   resources :orders
+  
 
+  # Cart functionality
+  post 'products/add_to_cart/:id', to: 'products#add_to_cart', as: 'add_to_cart'
+  delete 'products/remove_from_cart/:id', to: 'products#remove_from_cart', as: 'remove_from_cart'
+  
   # Static pages
   get '/about', to: 'pages#about'
 
