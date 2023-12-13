@@ -5,7 +5,7 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingCart">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCart" aria-expanded="false" aria-controls="collapseCart">
-          Shopping Cart
+          <strong>Shopping Cart</strong>
         </button>
       </h2>
       <div id="collapseCart" class="accordion-collapse collapse" aria-labelledby="headingCart" data-bs-parent="#cartAccordion">
@@ -17,7 +17,7 @@
                 <strong>Product Name</strong>
               </div>
               <div class="col-2">
-                <strong>Quantity</strong>
+                <strong>Qty</strong>
               </div>
               <div class="col-3">
                 <strong>Unit Price</strong>
@@ -48,7 +48,7 @@
             <% end %>
             <!-- Total Row -->
             <div class="row mt-3">
-              <div class="col-12 text-end">
+              <div class="col-12 text-start">
                 <strong>Cart Subtotal: $<%= '%.2f' % total_cart_price %></strong>
               </div>
             </div>
