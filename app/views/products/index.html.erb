@@ -51,9 +51,11 @@
                 <strong>Cart Subtotal:</strong>
                 <strong>$<%= '%.2f' % total_cart_price %></strong>
               </div>
-              <div class="col-4 text-end">
-                <%= link_to "Check Out", orderconfirmation_path, method: :post, class: "btn btn-primary btn-sm ms-2" %>
-              </div>
+              <% if !session[:cart].empty? %>
+                <div class="col-4 text-end">
+                  <%= link_to "Check Out", orderconfirmation_path, method: :post, class: "btn btn-primary btn-sm ms-2" %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
