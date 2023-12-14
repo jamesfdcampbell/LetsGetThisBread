@@ -58,6 +58,9 @@
     <div class="row mt-4">
       <div class="col-12 d-flex justify-content-end">
         <%= button_to "Proceed to Payment", checkout_create_path, method: :post, class: "btn btn-primary" %>
+        <% if customer_signed_in? && session[:cart].present? %>
+          <%= button_to 'Complete Order', complete_order_path, method: :post, class: 'btn btn-success' %>
+        <% end %>
       </div>
     </div>
   </div>

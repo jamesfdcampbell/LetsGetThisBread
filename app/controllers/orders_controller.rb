@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_order, only: %i[ show edit update destroy ]
 
   # GET /orders or /orders.json
@@ -57,6 +57,48 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # POST /complete_order
+  def complete_order
+    ActiveRecord::Base.transaction do
+      subtotal = calculate_cart_subtotal(session[:cart])
+      tax_rate = current_customer.province.tax_rate
+      total_with_tax = subtotal * (1 + tax_rate)
+  
+      order = current_customer.orders.create!(
+        date: Date.today,
+        state: 1,
+        subtotal: subtotal,
+        tax_rate: tax_rate,
+        total_with_tax: total_with_tax
+      )
+      
+      session[:cart].each do |item_data|
+        product_id, price, quantity = item_data
+        order.order_products.create!(
+          product_id: product_id,
+          quantity: quantity,
+          priceAtTimeOfOrder: price
+        )
+      end
+  
+      # Clear the cart session after successfully creating the order
+      session[:cart] = nil
+    end
+  
+    # Redirect to a confirmation page with the notice
+    redirect_to root_path, notice: 'Your order has been successfully placed.'
+  rescue ActiveRecord::RecordInvalid => e
+    # If something goes wrong, you can redirect back to the cart page with an alert
+    redirect_to orderconfirmation_path, alert: "There was a problem creating your order: #{e.message}"
+  end
+  
+  private
+  
+  def calculate_cart_subtotal(cart)
+    cart.sum { |item_data| item_data[1] * item_data[2] }
+  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
