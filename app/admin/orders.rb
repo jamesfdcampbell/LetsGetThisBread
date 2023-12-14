@@ -1,7 +1,4 @@
 ActiveAdmin.register Order do
-  # # Set up the menu if needed
-  # menu priority: 5
-
   # Permit parameters for updating order state
   permit_params :state
 
@@ -13,19 +10,15 @@ ActiveAdmin.register Order do
       order.customer.name
     end
     column :date
-    column :subtotal
+    column :subtotal do |order|
+      number_to_currency(order.subtotal)
+    end
     column :tax_rate
-    column :total_with_tax
+    column :total_with_tax do |order|
+      number_to_currency(order.total_with_tax)
+    end
     column :state
     actions
-  end
-
-  # Customizing the form for editing the order state
-  form do |f|
-    f.inputs 'Order Details' do
-      f.input :state, as: :select, collection: Order.states.keys
-    end
-    f.actions
   end
 
   # Customizing the show page
@@ -35,9 +28,13 @@ ActiveAdmin.register Order do
         order.customer.name
       end
       row :date
-      row :subtotal
+      row :subtotal do |order|
+        number_to_currency(order.subtotal)
+      end
       row :tax_rate
-      row :total_with_tax
+      row :total_with_tax do |order|
+        number_to_currency(order.total_with_tax)
+      end
       row :state
     end
 
@@ -47,7 +44,9 @@ ActiveAdmin.register Order do
           order_product.product.name
         end
         column :quantity
-        column :priceAtTimeOfOrder
+        column :priceAtTimeOfOrder do |order_product|
+          number_to_currency(order_product.priceAtTimeOfOrder)
+        end
       end
     end
   end
@@ -56,4 +55,12 @@ ActiveAdmin.register Order do
   filter :customer_name, as: :string
   filter :date
   filter :state, as: :select, collection: -> { Order.states.keys }
+
+  # Customizing the form for editing the order state
+  form do |f|
+    f.inputs 'Order Details' do
+      f.input :state, as: :select, collection: Order.states.keys
+    end
+    f.actions
+  end
 end
