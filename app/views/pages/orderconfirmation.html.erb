@@ -47,10 +47,17 @@
         <div class="row mt-3">
           <div class="col-12">
             <p class="mb-1"><strong>Cart Subtotal:</strong> $<%= '%.2f' % total_cart_price %></p>
-            <p class="mb-1"><strong>Tax:</strong> $<%= '%.2f' % (total_cart_price * current_customer.province.tax_rate) %></p>
+            <p class="mb-1"><strong>Tax (<%= current_customer.province.tax_rate * 100 %>%):</strong> $<%= '%.2f' % (total_cart_price * current_customer.province.tax_rate) %></p>
             <p class="mb-1"><strong>Cart Total:</strong> $<%= '%.2f' % (total_cart_price * (1 + current_customer.province.tax_rate)) %></p>
           </div>
         </div>
+      </div>
+    </div>
+    
+    <!-- Proceed to Payment Button -->
+    <div class="row mt-4">
+      <div class="col-12 d-flex justify-content-end">
+        <%= button_to "Proceed to Payment", checkout_create_path, method: :post, class: "btn btn-primary" %>
       </div>
     </div>
   </div>
